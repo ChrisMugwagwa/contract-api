@@ -1,6 +1,6 @@
 ## Description
 
-Simple API application to to interact with a deployted ethereum contract
+Typescript API application to to interact with a deployted ethereum contract
 
 ## API
 The API has these endpoints
@@ -22,3 +22,4 @@ PORT=9000 npm start
 
 
 You can run the tests with `npm test`
+

@@ -1,0 +1,27 @@
+{
+  "name": "contract-api",
+  "version": "1.0.0",
+  "description": "Christian Mugwagwa contract api",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisMugwagwa/contract-api.git"
+  },
+  "author": "Christian Mugwagwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisMugwagwa/contract-api/issues"
+  },
+  "homepage": "https://github.com/ChrisMugwagwa/contract-api#readme",
+  "dependencies": {
+    "ethers": "^6.12.1",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

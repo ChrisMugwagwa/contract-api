@@ -1,10 +1,12 @@
 // import ethers from 'ethers';
-import * as hardhat from 'hardhat'
+import { ethers } from 'hardhat';
 
 async function main() {
     
-const factory = hardhat.ethers.ContractFactory("Leaderboard");
-const contract = await factory.deploy("stolencode.eth");
+const factory = await ethers.getContractFactory("Leaderboard");
+const contract = await factory.deploy();
+
+await contract.deployed();
     console.log("Contract Deployed to Address:", contract.address);
   }
   main()

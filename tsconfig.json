@@ -8,10 +8,11 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "rootDirs": ["./src", "./deployment", "./test"],
+    "outDir": "./dist"
   },
   "exclude": [
     "node-modules"
   ],
   "include": ["./test", "./src", "./deployment"],
-  "files": ["./hardhat.config.ts"]
+  "files": ["./hardhat.config.ts"],
 }

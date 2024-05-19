@@ -1,4 +1,3 @@
-// import ethers from 'ethers';
 import { ethers } from 'hardhat';
 
 async function main() {

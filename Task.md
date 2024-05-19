@@ -1,7 +1,4 @@
 
- 
-
-Please find the take home assessment below. Please let me know if you have any questions.
 **Objective:**
 
 Build a simple backend service using TypeScript that interacts with a blockchain smart contract and provides API endpoints to interact with this contract. The service will simulate a basic on-chain leaderboard for a game.

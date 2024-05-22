@@ -1,6 +1,6 @@
 import express from "express";
 import { callAddPlayer, callGetPlayers } from "./leaderboardService";
-import { Validator } from "jsonschema";
+import { ValidationError, Validator } from "jsonschema";
 const v = new Validator();
 
 const server = express();
@@ -22,9 +22,9 @@ server.get("/players", async (req, res) => {
     res.status(200).send(await callGetPlayers());
   } catch (error: any) {
     if (error.reason === "invalid address") {
-      res.status(500).send("Invalid contract address");
+      res.status(400).send({error: "Invalid contract address"});
     } else {
-      res.status(500).send(error);
+      res.status(500).send({error: error.message});
     }
   }
 });
@@ -39,10 +39,15 @@ server.post("/players", async (req, res) => {
     if (valid) {
       await res.send(await callAddPlayer(address, score));
     } else {
-      throw errors.map((error) => error.stack); //the validator errors found in the request body
+      throw new ValidationError((errors.map((error) => error.stack)).toString()); //the validator errors found in the request body
     }
   } catch (error: any) {
-    res.status(500).send(error.message);
+    if (error instanceof ValidationError) {
+      res.status(400).send(error);
+    } else {
+      console.log(error)
+    res.status(500).send({error: error.message});
+    }
   }
 });
 
